@@ -17,6 +17,12 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
+
+    if a <= 0 or b <=0 or c<=0:
+        raise TriangleError('All sides should be greater than 0')
+    if a+b+c <= 2*max(a,b,c):
+        raise TriangleError('The sum of any two sides should be greater than the third one')
+
     if a==b and b==c:
         return 'equilateral'
     elif a == b or b==c or a==c:
